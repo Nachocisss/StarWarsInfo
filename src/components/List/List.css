@@ -1,13 +1,15 @@
 .tableContainer {
   position: relative;
-  margin: 40px;
+  margin: 12px;
+  margin-left: 46px;
+  margin-right: 46px;
 }
 table {
   width: 100%;
   border: 1px gold solid;
   border-radius: 16px;
-  padding: 16px;
-  height: 70vh;
+  padding: 8px;
+  height: 75vh;
 }
 .loading {
   color: white;
@@ -26,6 +28,7 @@ td {
 }
 tr:hover {
   background-color: rgba(255, 255, 255, 0.16);
+  cursor: pointer;
 }
 .spaceImg {
   width: 100%;

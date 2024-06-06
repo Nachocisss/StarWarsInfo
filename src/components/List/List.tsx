@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./List.css";
 import { getData } from "../../services/getData.tsx";
 import spaceImg from "../../assets/space.jpeg";
+import { useDetails } from "../../context/DetailContext.tsx";
+import { header } from "../utils/TableUtils.jsx";
 
 export default function List() {
   const intiUrl = "https://swapi.dev/api/people/?page=";
   const [data, setData] = useState();
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
+  const { selected, selectCharacter } = useDetails();
 
   function getDataHandler(urlParam) {
     getData(urlParam).then((d) => {
@@ -21,19 +24,6 @@ export default function List() {
     getDataHandler(intiUrl + page);
   }, [page]);
 
-  const header = (
-    <tr>
-      <th>Name</th>
-      <th>Height</th>
-      <th>Mass</th>
-      <th>Hair color</th>
-      <th>Skin color</th>
-      <th>Eye color</th>
-      <th>Birth day</th>
-      <th>Gender</th>
-    </tr>
-  );
-
   return (
     <>
       {loading ? (
@@ -41,14 +31,17 @@ export default function List() {
       ) : (
         <>
           <div className="tableContainer">
+            <span>{selected.title}</span>
             <img src={spaceImg} alt="space background" className="spaceImg" />
             <table>
               <tbody>
                 {header}
                 {data?.results.map((p) => {
                   return (
-                    <tr key={p.url}>
-                      <td>{p.name}</td>
+                    <tr key={p.url} onClick={() => selectCharacter(p)}>
+                      <td>
+                        <strong>{p.name}</strong>
+                      </td>
                       <td>{p.height}</td>
                       <td>{p.mass}</td>
                       <td>{p.hair_color}</td>
