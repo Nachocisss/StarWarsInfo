@@ -1,4 +1,5 @@
 import "./App.css";
+import { Header } from "./components/Header/Header.tsx";
 import List from "./components/List/List.tsx";
 import { DetailProvider } from "./context/DetailContext.tsx";
 
@@ -6,9 +7,7 @@ function App() {
   return (
     <div className="App">
       <DetailProvider>
-        <header className="App-header">
-          <p>Star Wars Enciclopedia</p>
-        </header>
+        <Header />
         <List />
       </DetailProvider>
     </div>

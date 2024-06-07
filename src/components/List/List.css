@@ -11,6 +11,27 @@ table {
   padding: 8px;
   height: 75vh;
 }
+.loadingContainer {
+  align-content: center;
+  height: 70vh;
+}
+.iconContainer {
+  position: relative;
+  margin-top: 12px;
+  animation: iconMovement 3s linear infinite;
+}
+@keyframes iconMovement {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 20px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
 .loading {
   color: white;
   font-size: 48px;

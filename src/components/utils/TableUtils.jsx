@@ -1,6 +1,7 @@
 import React from "react";
+import "./../List/List.css"
 export const header = () => {
-  <tr>
+  return (<tr>
     <th>Name</th>
     <th>Height</th>
     <th>Mass</th>
@@ -9,5 +10,5 @@ export const header = () => {
     <th>Eye color</th>
     <th>Birth day</th>
     <th>Gender</th>
-  </tr>;
+  </tr>)
 };
