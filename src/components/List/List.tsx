@@ -5,19 +5,25 @@ import spaceImg from "../../assets/space.jpeg";
 import { useDetails } from "../../context/DetailContext.tsx";
 import { header } from "../utils/TableUtils.jsx";
 import { FaShuttleSpace } from "react-icons/fa6";
+import mockData from "../../mocks/dataMock.json";
 
+const USEMOCK = false;
 export default function List() {
   const intiUrl = "https://swapi.dev/api/people/?page=";
   const [data, setData] = useState();
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
-  const { selected, selectCharacter } = useDetails();
+  const { selectCharacter } = useDetails();
 
   function getDataHandler(urlParam) {
-    getData(urlParam).then((d) => {
-      setData(d);
-      setLoading(false);
-    });
+    if (USEMOCK) {
+      setData(mockData);
+    } else {
+      getData(urlParam).then((d) => {
+        setData(d);
+      });
+    }
+    setLoading(false);
   }
 
   useEffect(() => {
@@ -54,7 +60,6 @@ export default function List() {
       ) : (
         <>
           <div className="tableContainer">
-            <span>{selected.title}</span>
             <img src={spaceImg} alt="space background" className="spaceImg" />
             <table>
               <tbody>

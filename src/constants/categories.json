@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Basic Information",
+    "categories": [
+      { "title": "Name", "value": "name" },
+      { "title": "Birth Year", "value": "birth_year" },
+      { "title": "Gender", "value": "gender" }
+    ]
+  },
+  {
+    "title": "Physical Attributes",
+    "categories": [
+      { "title": "Height", "value": "height" },
+      { "title": "Weight", "value": "mass" },
+      { "title": "Hair Color", "value": "hair_color" },
+      { "title": "Skin Color", "value": "skin_color" },
+      { "title": "Eye Color", "value": "eye_color" }
+    ]
+  },
+  {
+    "title": "Links",
+    "categories": [
+      { "title": "Homeworld", "value": "homeworld" },
+      { "title": "Vehicles", "value": "vehicles" },
+      { "title": "Starships", "value": "starships" }
+    ]
+  }
+]
