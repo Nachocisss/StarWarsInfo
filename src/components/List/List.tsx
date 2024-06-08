@@ -21,9 +21,9 @@ export default function List() {
     } else {
       getData(urlParam).then((d) => {
         setData(d);
+        setLoading(false);
       });
     }
-    setLoading(false);
   }
 
   useEffect(() => {
